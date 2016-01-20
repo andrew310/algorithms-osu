@@ -52,8 +52,16 @@ def divideConquer(array, left, right):
     return max(max(leftMax, rightMax),leftMax+rightMax) #return max of three options
 
 
+def maxSubArrayLT(numList):
+    tempMax = maxSum = numList[0] #start with the first element of the array
+    for x in numList[1:]:   #loop starting with the 2nc element in array
+        tempMax = max(x, tempMax + x) #set next equal to max of current element, and next + current element
+        maxSum = max(maxSum, tempMax) #compar maxSum to tempMax and set maxSum to the greater of the two
+    return maxSum
+
+
 myArray = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
 
 
-sumMSA = divideConquer(myArray, 0, len(myArray)-1)
+sumMSA = maxSubArrayLT(myArray)
 print sumMSA
