@@ -9,7 +9,6 @@ def maxSubArrayEnum(numList):
             if maxSum < tempSum:
                 maxSum = tempSum
                 start, end = j, i
-    print maxSum
     return (start, end, maxSum)
 
 def maxSubArrayEnum2(numList):
@@ -24,12 +23,37 @@ def maxSubArrayEnum2(numList):
             tempSum = 0
             newStart = i
 
-    print maxSum
     return (start, end, maxSum)
+
+
+def divideConquer(array, left, right):
+    if (left == right): # if only one element
+        return array[left]
+
+    middle = (left+right)/2 #store the middle index, will be used to divide array into halves
+    leftSub = divideConquer(array, left, middle) #leftSub will contain left half of array
+    rightSub = divideConquer(array, middle+1, right) #rightSub will contain right half of array
+    leftMax = 0
+    rightMax = 0
+    tempMax = 0
+    for i in range(middle, -1, -1): #backwards loop starting at middle to 0, find max sub array of left sub
+        tempMax += array[i]
+
+        if(tempMax > leftMax):
+            leftMax = tempMax
+
+    tempMax = 0
+    for i in range(middle+1, right): # loop for right sub, find max array of right sub
+        tempMax += array[i]
+        print tempMax
+        if(tempMax > rightMax):
+            rightMax = tempMax
+
+    return max(max(leftMax, rightMax),leftMax+rightMax) #return max of three options
 
 
 myArray = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
 
 
-maxSubArrayEnum2(myArray)
-
+sumMSA = divideConquer(myArray, 0, len(myArray)-1)
+print sumMSA
