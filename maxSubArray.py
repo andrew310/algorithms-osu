@@ -1,4 +1,26 @@
+import sys
+
 __author__ = 'Andrew, Myles, Robert'
+
+with open("MSS_Problems.txt") as inFile:
+    testArray = ''.join(inFile.readline())
+    testArray = testArray.replace("[", "").replace(",", "").replace("]", "").split()
+    testArray = map(int, testArray)
+
+if len(sys.argv) > 1:
+    algorithmToRun = sys.argv[1]
+else:
+    print("Please specify algorithm you want to use as an argument.")
+    print("eg. python maxSubArray.py <Algorithm Number>")
+    print("Algorithm #1 - Enumeration")
+    print("Algorithm #2 - Better Enumeration")
+    print("Algorithm #3 - Divide and Conquer")
+    print("Algorithm #4 - Linear-Time")
+    sys.exit()
+
+print ("ARRAY INPUT:")
+print (testArray)
+print ("\n")
 
 def maxSubArrayEnum(numList):
     start, end, maxSum = 0, 0, 0
@@ -59,9 +81,21 @@ def maxSubArrayLT(numList):
         maxSum = max(maxSum, tempMax) #compar maxSum to tempMax and set maxSum to the greater of the two
     return maxSum
 
+def printResult(algorithm):    
+        print algorithm(testArray)
 
-myArray = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
+def printResultDC(algorithm, start, end):
+    print algorithm(testArray, start, end)
 
-
-sumMSA = maxSubArrayLT(myArray)
-print sumMSA
+if (algorithmToRun == "Algorithm 1" or algorithmToRun == "1"):
+    print("Using enumeration algorithm:")
+    printResult(maxSubArrayEnum)
+elif (algorithmToRun == "Algorithm 2" or algorithmToRun == "2"):
+    print("Using better enumeration algorithm:")
+    printResult(maxSubArrayEnum2)
+elif (algorithmToRun == "Algorithm 3" or algorithmToRun == "3"):
+    print("Using divide and conquer algorithm:")
+    printResultDC(divideConquer, 0, len(testArray) - 1)
+elif (algorithmToRun == "Algorithm 4" or algorithmToRun == "4"):
+    print("Using Linear-Time algorithm:")
+    printResult(maxSubArrayLT)
