@@ -27,7 +27,7 @@ def maxSubArrayEnum(numList):
 
     for i in range(0, len(numList)):
         for j in range(i, len(numList)):
-            tempSum = sum(numList[i:j])
+            tempSum = sum(numList[i:j+1])
             if maxSum < tempSum:
                 maxSum = tempSum
                 start, end = j, i
@@ -65,9 +65,8 @@ def divideConquer(array, left, right):
             leftMax = tempMax
 
     tempMax = 0
-    for i in range(middle+1, right): # loop for right sub, find max array of right sub
+    for i in range(middle+1, right+1): # loop for right sub, find max array of right sub
         tempMax += array[i]
-        print tempMax
         if(tempMax > rightMax):
             rightMax = tempMax
 
