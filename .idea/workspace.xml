@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9770dd6f-0a40-40b5-87c0-9a76a1be802b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\andrew.brown\Documents\GitHub\algorithms\~$gorithmAnalysis.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgorithmAnalysis.docx" afterPath="$PROJECT_DIR$/AlgorithmAnalysis.docx" />
-    </list>
+    <list default="true" id="9770dd6f-0a40-40b5-87c0-9a76a1be802b" name="Default" comment="" />
     <ignored path="algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
