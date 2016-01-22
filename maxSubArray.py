@@ -27,8 +27,8 @@ def maxSubArrayEnum(numList):
 
     for i in range(0, len(numList)):
         for j in range(i, len(numList)):
-            tempSum = sum(numList[i:j+1])
-            if maxSum < tempSum:
+            newSum = sum(numList[i:j+1])
+            if maxSum < newSum:
                 maxSum = tempSum
                 start, end = j, i
     return (start, end, maxSum)
@@ -56,6 +56,7 @@ def divideConquer(array, left, right):
     leftMax = 0
     rightMax = 0
     tempMax = 0
+    #combined funtions maxPrefix and maxSuffix from pseudocode here
     for i in range(middle, -1, -1): #backwards loop starting at middle to 0, find max sub array of left sub
         tempMax += array[i]
 
@@ -71,12 +72,31 @@ def divideConquer(array, left, right):
     return max(max(leftMax, rightMax),leftMax+rightMax) #return max of three options
 
 
-def maxSubArrayLT(numList):
+'''def maxSubArrayLT(numList):
     tempMax = maxSum = numList[0] #start with the first element of the array
     for x in numList[1:]:   #loop starting with the 2nc element in array
         tempMax = max(x, tempMax + x) #set next equal to max of current element, and next + current element
         maxSum = max(maxSum, tempMax) #compar maxSum to tempMax and set maxSum to the greater of the two
-    return maxSum
+    return maxSum'''
+
+def maxSubArrayLT(numList):
+    bestSum = -sys.maxint - 1
+    bestStart = bestEnd = -1
+    localStart = localSum = 0
+    for i in range(0, len(numList)):
+        localSum += numList[i]
+        if localSum > bestSum:
+            bestSum = localSum
+            bestStart = localStart
+            bestEnd = i
+        if localSum <= 0:
+            localSum = 0
+            localStart = i + 1
+
+    maxSumArray = numList[bestStart:bestEnd+1]
+    print "Max Array:"
+    print maxSumArray
+    return bestSum
 
 def printResult(algorithm):    
         print algorithm(testArray)
