@@ -34,18 +34,16 @@ def maxSubArrayEnum(numList):
     return (start, end, maxSum)
 
 def maxSubArrayEnum2(numList):
-    start, end, maxSum, newStart, tempSum = 0, 0, 0, 0, 0
+    maxSum, tempSum = 0, 0
 
-    for i, j in enumerate(numList): #this is just one loop, i is the index and j is the value
-        tempSum += j
-        if maxSum < tempSum:
-            maxSum = tempSum
-            start, end = newStart, i
-        elif tempSum < 0: #if we have a subarray that dips below zero, it is a negative sequence so just dump it and start over
-            tempSum = 0
-            newStart = i
+    for i in range(0, len(numList)): #this is just one loop, i is the index and j is the value
+        tempSum = 0
+        for j in range(i, len(numList)):
+            tempSum += numList[j]
+            if (tempSum > maxSum):
+                maxSum = tempSum
 
-    return (start, end, maxSum)
+    return (maxSum)
 
 
 def divideConquer(array, left, right):
