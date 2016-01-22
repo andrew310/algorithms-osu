@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9770dd6f-0a40-40b5-87c0-9a76a1be802b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maxSubArray.py" afterPath="$PROJECT_DIR$/maxSubArray.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\Users\andrew.brown\Documents\GitHub\algorithms\~$gorithmAnalysis.docx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgorithmAnalysis.docx" afterPath="$PROJECT_DIR$/AlgorithmAnalysis.docx" />
     </list>
     <ignored path="algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="maxSubArray.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/maxSubArray.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32539684">
-              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.62896824">
+              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -338,7 +338,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2047" y="52" width="1692" height="928" extended-state="1" />
+    <frame x="2047" y="52" width="1692" height="928" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -372,8 +372,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/maxSubArray.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32539684">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.62896824">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
           <folding />
         </state>
       </provider>
