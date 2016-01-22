@@ -27,11 +27,15 @@ def maxSubArrayEnum(numList):
 
     for i in range(0, len(numList)):
         for j in range(i, len(numList)):
-            newSum = sum(numList[i:j+1])
-            if maxSum < newSum:
+            tempSum = sum(numList[i:j+1])
+            if maxSum < tempSum:
                 maxSum = tempSum
-                start, end = j, i
-    return (start, end, maxSum)
+                start, end = i, j
+
+    maxSumArray = numList[start:end+1]
+    print "Max Array:"
+    print maxSumArray
+    return maxSum
 
 def maxSubArrayEnum2(numList):
     maxSum, tempSum = 0, 0
@@ -70,14 +74,6 @@ def divideConquer(array, left, right):
             rightMax = tempMax
 
     return max(max(leftMax, rightMax),leftMax+rightMax) #return max of three options
-
-
-'''def maxSubArrayLT(numList):
-    tempMax = maxSum = numList[0] #start with the first element of the array
-    for x in numList[1:]:   #loop starting with the 2nc element in array
-        tempMax = max(x, tempMax + x) #set next equal to max of current element, and next + current element
-        maxSum = max(maxSum, tempMax) #compar maxSum to tempMax and set maxSum to the greater of the two
-    return maxSum'''
 
 def maxSubArrayLT(numList):
     bestSum = -sys.maxint - 1
