@@ -1,5 +1,5 @@
 import sys
-
+import timeit
 __author__ = 'Andrew, Myles, Robert'
 
 with open("MSS_Problems.txt") as inFile:
@@ -18,10 +18,6 @@ else:
     print("Algorithm #4 - Linear-Time")
     sys.exit()
 
-print ("ARRAY INPUT:")
-print (testArray)
-print ("\n")
-
 def maxSubArrayEnum(numList):
     start, end, maxSum = 0, 0, 0
 
@@ -33,8 +29,11 @@ def maxSubArrayEnum(numList):
                 start, end = i, j
 
     maxSumArray = numList[start:end+1]
-    print "Max Array:"
-    print maxSumArray
+    print "Max SubArray:",
+    print maxSumArray, "\n"
+    print "Max Sum:",
+    print maxSum
+    print "Runtime:",
     return maxSum
 
 def maxSubArrayEnum2(numList):
@@ -46,22 +45,29 @@ def maxSubArrayEnum2(numList):
             tempSum += numList[j]
             if (tempSum > maxSum):
                 maxSum = tempSum
+                start, end = i, j
 
-    return (maxSum)
-
+    maxSumArray = numList[start:end+1]
+    print "Max SubArray:",
+    print maxSumArray, "\n"
+    print "Max Sum:",
+    print maxSum
+    print "Runtime:",
+    return maxSum
 
 def divideConquer(array, left, right):
+    start = time.time()
     if (left == right): # if only one element
         return array[left]
 
-    middle = (left+right)/2 #store the middle index, will be used to divide array into halves
-    leftSub = divideConquer(array, left, middle) #leftSub will contain left half of array
-    rightSub = divideConquer(array, middle+1, right) #rightSub will contain right half of array
+    middle = (left+right)/2 # store the middle index, will be used to divide array into halves
+    leftSub = divideConquer(array, left, middle) # leftSub will contain left half of array
+    rightSub = divideConquer(array, middle+1, right) # rightSub will contain right half of array
     leftMax = 0
     rightMax = 0
     tempMax = 0
-    #combined funtions maxPrefix and maxSuffix from pseudocode here
-    for i in range(middle, -1, -1): #backwards loop starting at middle to 0, find max sub array of left sub
+    # combined funtions maxPrefix and maxSuffix from pseudocode here
+    for i in range(middle, -1, -1): # backwards loop starting at middle to 0, find max sub array of left sub
         tempMax += array[i]
 
         if(tempMax > leftMax):
@@ -72,6 +78,12 @@ def divideConquer(array, left, right):
         tempMax += array[i]
         if(tempMax > rightMax):
             rightMax = tempMax
+
+    print "Max SubArray:",
+    print maxSumArray, "\n"
+    print "Max Sum:",
+    print maxSum
+    print "Runtime:",
 
     return max(max(leftMax, rightMax),leftMax+rightMax) #return max of three options
 
@@ -90,25 +102,40 @@ def maxSubArrayLT(numList):
             localStart = i + 1
 
     maxSumArray = numList[bestStart:bestEnd+1]
-    print "Max Array:"
-    print maxSumArray
+    print "Max SubArray:"
+    print maxSumArray, "\n"
+    print "Max Sum:",
+    print bestSum
+    print "Runtime:",
+
     return bestSum
 
-def printResult(algorithm):    
+def printResult(algorithm):
         print algorithm(testArray)
-
 def printResultDC(algorithm, start, end):
     print algorithm(testArray, start, end)
 
 if (algorithmToRun == "Algorithm 1" or algorithmToRun == "1"):
     print("Using enumeration algorithm:")
-    printResult(maxSubArrayEnum)
+    # printResult(maxSubArrayEnum)
+    t1 = timeit.Timer( "maxSubArrayEnum(testArray)", "from __main__ import maxSubArrayEnum, testArray")
+    print t1.timeit(number=1)
 elif (algorithmToRun == "Algorithm 2" or algorithmToRun == "2"):
     print("Using better enumeration algorithm:")
-    printResult(maxSubArrayEnum2)
+    # printResult(maxSubArrayEnum2)
+    t1 = timeit.Timer( "maxSubArrayEnum2(testArray)", "from __main__ import maxSubArrayEnum2, testArray")
+    print t1.timeit(number=1)
 elif (algorithmToRun == "Algorithm 3" or algorithmToRun == "3"):
     print("Using divide and conquer algorithm:")
-    printResultDC(divideConquer, 0, len(testArray) - 1)
+    # printResultDC(divideConquer, 0, len(testArray) - 1)
+    t1 = timeit.Timer( "divideConquer(testArray)", "from __main__ import divideConquer, testArray")
+    print t1.timeit(number=1)
 elif (algorithmToRun == "Algorithm 4" or algorithmToRun == "4"):
     print("Using Linear-Time algorithm:")
-    printResult(maxSubArrayLT)
+    # printResult(maxSubArrayLT)
+    t1 = timeit.Timer( "maxSubArrayLT(testArray)", "from __main__ import maxSubArrayLT, testArray")
+    print t1.timeit(number=1)
+    
+print ("\nArray Input:"),
+print testArray
+print ("\n")
