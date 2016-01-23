@@ -56,7 +56,6 @@ def maxSubArrayEnum2(numList):
     return maxSum
 
 def divideConquer(array, left, right):
-    start = time.time()
     if (left == right): # if only one element
         return array[left]
 
@@ -78,12 +77,6 @@ def divideConquer(array, left, right):
         tempMax += array[i]
         if(tempMax > rightMax):
             rightMax = tempMax
-
-    print "Max SubArray:",
-    print maxSumArray, "\n"
-    print "Max Sum:",
-    print maxSum
-    print "Runtime:",
 
     return max(max(leftMax, rightMax),leftMax+rightMax) #return max of three options
 
@@ -127,15 +120,17 @@ elif (algorithmToRun == "Algorithm 2" or algorithmToRun == "2"):
     print t1.timeit(number=1)
 elif (algorithmToRun == "Algorithm 3" or algorithmToRun == "3"):
     print("Using divide and conquer algorithm:")
-    # printResultDC(divideConquer, 0, len(testArray) - 1)
-    t1 = timeit.Timer( "divideConquer(testArray)", "from __main__ import divideConquer, testArray")
+    print "Max Sum:",
+    printResultDC(divideConquer, 0, len(testArray) - 1)
+    print "Runtime:",
+    t1 = timeit.Timer( "divideConquer(testArray, 0, len(testArray) -1)", "from __main__ import divideConquer, testArray")
     print t1.timeit(number=1)
 elif (algorithmToRun == "Algorithm 4" or algorithmToRun == "4"):
     print("Using Linear-Time algorithm:")
     # printResult(maxSubArrayLT)
     t1 = timeit.Timer( "maxSubArrayLT(testArray)", "from __main__ import maxSubArrayLT, testArray")
     print t1.timeit(number=1)
-    
+
 print ("\nArray Input:"),
 print testArray
 print ("\n")
