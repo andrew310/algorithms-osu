@@ -36,7 +36,7 @@ def maxSubArrayEnum(numList):
 # inputs: numList is an array of numbers, negative or positive
 # returns: the maximum sum subarray, and the max sum, in a tuple
 def maxSubArrayEnum2(numList):
-    maxSum, tempSum = 0, 0
+    start, end, maxSum, tempSum = 0, 0, 0, 0
 
     for i in range(0, len(numList)): #this is just one loop, i is the index and j is the value
         tempSum = 0
@@ -93,8 +93,6 @@ def divideConquer(array, left, right):
         if(tempMax > rightMax):
             rightIndex = i
             rightMax = tempMax
-
-    print leftSub
 
     if leftMax == max(max(leftMax, rightMax),leftMax+rightMax):
         return (leftMax, leftSub)
@@ -153,6 +151,3 @@ runAlgorithm(maxSubArrayLT, "Linear Results:")
 
 inFile.close()
 outFile.close()
-
-
-#######TESTING ANALYSIS#######
