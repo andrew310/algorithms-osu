@@ -1,11 +1,12 @@
 __author__ = 'Andrew, Myles, Robert'
 # course: cs325 project 1
 # date: 1/23/2016
-# name: Andrew Brown, Myles, Robert
+# name: Andrew Brown, Myles Chatman, Robert Ottolia
 # description: tests 4 different algorithms to find the max sub array in a given array
 from ast import literal_eval
 import sys
 import time
+import random
 
 
 ##############################################################
@@ -67,19 +68,22 @@ def algo3Start(list):
 # returns: a tuple that contains the max sum, as well as the sub array
 def divideConquer(array, left, right):
     if (left == right): # if only one element
-        return array[left]
+        return (array[left], array)
 
     middle = (left+right)/2 # store the middle index, will be used to divide array into halves
     leftSub = divideConquer(array, left, middle) # leftSub will contain left half of array
     rightSub = divideConquer(array, middle+1, right) # rightSub will contain right half of array
-    leftMax = 0
-    rightMax = 0
+    leftIndex = middle
+    rightIndex = middle+1
+    leftMax = array[middle]
+    rightMax =array[middle+1]
     tempMax = 0
 
     # combined funtions maxPrefix and maxSuffix from pseudocode here
     for i in range(middle, -1, -1): # backwards loop starting at middle to 0, find max sub array of left sub
         tempMax += array[i]
         if(tempMax > leftMax):
+            leftIndex = i
             leftMax = tempMax
 
     tempMax = 0
@@ -87,9 +91,17 @@ def divideConquer(array, left, right):
         tempMax += array[i]
         startRight = middle+1
         if(tempMax > rightMax):
+            rightIndex = i
             rightMax = tempMax
 
-    return max(max(leftMax, rightMax),leftMax+rightMax) #return max of three options
+    print leftSub
+
+    if leftMax == max(max(leftMax, rightMax),leftMax+rightMax):
+        return (leftMax, leftSub)
+    elif rightMax == max(max(leftMax, rightMax),leftMax+rightMax):
+        return (rightMax, rightSub)
+    else:
+        return  (leftMax+rightMax, array[leftIndex:rightIndex+1])
 
 
 ##############################################################
@@ -113,11 +125,6 @@ def maxSubArrayLT(numList):
             localStart = i + 1
 
     maxSumArray = numList[bestStart:bestEnd+1]
-    #print "Max SubArray:"
-    #print maxSumArray, "\n"
-    print "Max Sum:",
-    print bestSum
-    #print "Runtime:",
     return (bestSum, maxSumArray)
 
 
@@ -144,3 +151,8 @@ runAlgorithm(maxSubArrayEnum2, "Iteration Results:")
 runAlgorithm(algo3Start, "Divide & Conquer Results:")
 runAlgorithm(maxSubArrayLT, "Linear Results:")
 
+inFile.close()
+outFile.close()
+
+
+#######TESTING ANALYSIS#######
