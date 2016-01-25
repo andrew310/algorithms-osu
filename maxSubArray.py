@@ -127,12 +127,28 @@ def maxSubArrayLT(numList):
 
 
 #########FILE INPUT AND OUPUT##########
+
+###CLEAN THE FILE###
+## THIS IS NECESSARY BECAUSE THERE WERE BLANK LINES AT END OF PROVIDED FILE ##
+## THE BLANK LINES WERE THROWING ERRORS IN LITERAL EVAL ##
+
+f = open("MSS_Problems.txt", "r")
+lines = f.readlines()
+f.close()
+f = open("MSS_Problems.txt", "w")
+for line in lines:
+  if not line.isspace():
+    f.write(line)
+
+f.close()
+
+
+##OPEN FILE AGAIN##
 inFile = open("MSS_Problems.txt", "r")
 outFile = open("MSS_Results.txt", "w")
 appendFile = open("MSS_Results.txt", "a")
 
 numbers = inFile.read()
-
 
 def runAlgorithm(algorithm, note):
     outFile.write("\n")
