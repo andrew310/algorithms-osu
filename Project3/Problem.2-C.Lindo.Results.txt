@@ -1,0 +1,71 @@
+
+ LP OPTIMUM FOUND AT STEP     10
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      1.721142
+
+  VARIABLE        VALUE          REDUCED COST
+         T         0.000000          1.066125
+         L         0.000000          0.407098
+         S         1.426983          0.000000
+         C         0.000000          0.589763
+        SS         0.101109          0.000000
+        ST         0.128708          0.000000
+        CP         0.721505          0.000000
+         O         0.000000          8.618567
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+        2)         0.000000          0.002086
+        3)         0.000000         -0.174151
+        4)         6.000000          0.000000
+        5)         0.000000          0.046191
+        6)        22.563337          0.000000
+        7)        35.139565          0.000000
+        8)         0.000000         -0.258494
+        9)         0.000000          0.000000
+       10)         0.000000          0.000000
+       11)         1.426983          0.000000
+       12)         0.000000          0.000000
+       13)         0.101109          0.000000
+       14)         0.128708          0.000000
+       15)         0.721505          0.000000
+       16)         0.000000          0.000000
+
+ NO. ITERATIONS=      10
+
+
+ RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                           OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+        T        1.000000         INFINITY         1.066125
+        L        0.750000         INFINITY         0.407098
+        S        0.500000         0.451467         0.148102
+        C        0.500000         INFINITY         0.589763
+       SS        0.450000         2.006732        13.530115
+       ST        2.150000         1.823182         0.344260
+       CP        0.950000         0.230827         0.533147
+        O        2.000000         INFINITY         8.618567
+
+                           RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+        2      250.000000        21.237278        79.823807
+        3       15.000000         3.419831         1.339644
+        4        2.000000         6.000000         INFINITY
+        5        8.000000         8.327758         4.392608
+        6        4.000000        22.563337         INFINITY
+        7      200.000000         INFINITY        35.139565
+        8        0.000000         0.514060         0.817576
+        9        0.000000         0.000000         INFINITY
+       10        0.000000         0.000000         INFINITY
+       11        0.000000         1.426983         INFINITY
+       12        0.000000         0.000000         INFINITY
+       13        0.000000         0.101109         INFINITY
+       14        0.000000         0.128708         INFINITY
+       15        0.000000         0.721505         INFINITY
+       16        0.000000         0.000000         INFINITY
+
