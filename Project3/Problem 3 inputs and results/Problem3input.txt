@@ -1,0 +1,93 @@
+max b + c + d + e + f + g + h + i + j + k + l + m
+
+ST
+a = 0
+b - a <= 2
+c - a <= 3
+d - a <= 8
+h - a <= 9
+a - b <= 4
+c - b <= 5
+e - b <= 7
+f - b <= 4
+d - c <= 10
+b - c <= 5
+g - c <= 9
+i - c <= 11
+f - c <= 4
+a - d <= 8
+g - d <= 2
+j - d <= 5
+f - d <= 5
+f - d <= 1
+h - e <= 5
+c - e <= 4
+i - e <= 10
+i - f <= 2
+g - f <= 2
+d - g <= 2
+j - g <= 8
+k - g <= 12
+i - h <= 5
+k - h <= 10
+a - i <= 20
+k - i <= 6
+j - i <= 2
+m - i <= 12
+i - j <= 2
+k - i <= 4
+l - j <= 5
+h - k <= 10
+m - k <= 10
+m - l <= 2
+
+END
+
+
+*** PART B ***
+
+max b + c + d + e + f + g + h + i + j + k + l + m
+
+ST
+a = 0
+b - a <= 2
+c - a <= 3
+d - a <= 8
+h - a <= 9
+a - b <= 4
+c - b <= 5
+e - b <= 7
+f - b <= 4
+d - c <= 10
+b - c <= 5
+g - c <= 9
+i - c <= 11
+f - c <= 4
+a - d <= 8
+g - d <= 2
+j - d <= 5
+f - d <= 5
+f - d <= 1
+h - e <= 5
+c - e <= 4
+i - e <= 10
+i - f <= 2
+g - f <= 2
+d - g <= 2
+j - g <= 8
+k - g <= 12
+i - h <= 5
+k - h <= 10
+a - i <= 20
+k - i <= 6
+j - i <= 2
+m - i <= 12
+i - j <= 2
+k - i <= 4
+l - j <= 5
+h - k <= 10
+m - k <= 10
+m - l <= 2
+m - z <= 5
+
+END

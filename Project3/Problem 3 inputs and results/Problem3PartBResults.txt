@@ -1,0 +1,7 @@
+NBOUNDED VARIABLES ARE:
+  SLK   41
+         Z
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)     0.9999990E+08
