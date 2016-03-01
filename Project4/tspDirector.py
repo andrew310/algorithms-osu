@@ -1,4 +1,5 @@
 import sys
+import greedy.py
 
 filename = sys.argv[-1]
 cities = []
