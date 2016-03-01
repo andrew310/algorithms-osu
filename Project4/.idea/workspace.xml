@@ -22,23 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tspDirector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tspDirector.py">
+      <file leaf-file-name="heuristic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/heuristic.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="greedy.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/greedy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20950705">
-              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,6 +47,7 @@
         <option value="$PROJECT_DIR$/primsAlso.py" />
         <option value="$PROJECT_DIR$/tspDirector.py" />
         <option value="$PROJECT_DIR$/greedy.py" />
+        <option value="$PROJECT_DIR$/heuristic.py" />
       </list>
     </option>
   </component>
@@ -68,8 +57,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="251" />
-    <option name="y" value="523" />
+    <option name="x" value="260" />
+    <option name="y" value="190" />
     <option name="width" value="1390" />
     <option name="height" value="705" />
   </component>
@@ -136,7 +125,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="251" y="523" width="1390" height="705" extended-state="1" />
+    <frame x="260" y="190" width="1390" height="705" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2518195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -167,20 +156,28 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/greedy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82042253">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tspDirector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.4190141">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/greedy.py">
+    <entry file="file://$PROJECT_DIR$/heuristic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20950705">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
