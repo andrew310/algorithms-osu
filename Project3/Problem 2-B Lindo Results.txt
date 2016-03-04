@@ -1,0 +1,69 @@
+
+ LP OPTIMUM FOUND AT STEP     10
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      1.676833
+
+  VARIABLE        VALUE          REDUCED COST
+         T         0.000000          1.075116
+         L         0.000000          0.414501
+         S         1.525128          0.000000
+         C         0.000000          0.558887
+        SS         0.103289          0.000000
+        ST         0.000000          0.344260
+        CP         0.913462          0.000000
+         O         0.000000          7.668215
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+        2)         0.000000         -0.141076
+        3)         6.000000          0.000000
+        4)         0.000000          0.054913
+        5)        27.749039          0.000000
+        6)        29.224140          0.000000
+        7)         0.000000         -0.294848
+        8)         0.000000          0.000000
+        9)         0.000000          0.000000
+       10)         1.525128          0.000000
+       11)         0.000000          0.000000
+       12)         0.103289          0.000000
+       13)         0.000000          0.000000
+       14)         0.913462          0.000000
+       15)         0.000000          0.000000
+
+ NO. ITERATIONS=      10
+
+
+ RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                           OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+        T        1.000000         INFINITY         1.075116
+        L        0.750000         INFINITY         0.414501
+        S        0.500000         0.451467         0.177101
+        C        0.500000         INFINITY         0.558887
+       SS        0.450000         2.341986        17.027126
+       ST        2.150000         INFINITY         0.344261
+       CP        0.950000         0.230827         1.124052
+        O        2.000000         INFINITY         7.668215
+
+                           RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+        2       15.000000         1.989268        10.253563
+        3        2.000000         6.000000         INFINITY
+        4        8.000000        18.698267         4.405192
+        5        4.000000        27.749039         INFINITY
+        6      200.000000         INFINITY        29.224140
+        7        0.000000         0.460197         0.916071
+        8        0.000000         0.000000         INFINITY
+        9        0.000000         0.000000         INFINITY
+       10        0.000000         1.525128         INFINITY
+       11        0.000000         0.000000         INFINITY
+       12        0.000000         0.103289         INFINITY
+       13        0.000000         0.000000         INFINITY
+       14        0.000000         0.913462         INFINITY
+       15        0.000000         0.000000         INFINITY
+
