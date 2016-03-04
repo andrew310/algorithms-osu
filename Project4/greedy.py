@@ -1,7 +1,7 @@
 import math
 
 def cityDistance(c1, c2):
-	# each node is an array [x,y]
+	# each input is an array with city, xcoord and ycoord in the 0, 1, 2 spots
 	d = int(round(math.sqrt( (c1[1]-c2[1])**2 + (c1[2]-c2[2])**2 )))
 	return d
 
@@ -29,6 +29,9 @@ def greedyTSP(cities):
         visited.append(nearestCity)
         mustVisit.remove(nearestCity)
 
+    lastDistance = cityDistance(visited[0], visited[len(visited)-1])
+
+    tourLength += lastDistance
 
     print tourLength
     print len(visited)
