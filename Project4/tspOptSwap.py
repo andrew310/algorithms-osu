@@ -61,3 +61,9 @@ def calculateDistance(cities, city1, city2):
 	result = int(round(result))
 
 	return result
+
+
+
+def TSP(cities):
+	tourLength = 0;
+	improve = 0

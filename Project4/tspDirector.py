@@ -1,5 +1,6 @@
 import sys
 import greedy
+import heldKarp
 filename = sys.argv[-1]
 cities = []
 print 'Argument List:', str(sys.argv)
@@ -13,4 +14,5 @@ except IOError as e:
     print 'Error in opening file '+ filename
     sys.exit(-1)
 
-greedy.greedyTSP(cities)
+#greedy.greedyTSP(cities)
+heldKarp.heldKarp(cities)
