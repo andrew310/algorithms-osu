@@ -14,5 +14,5 @@ except IOError as e:
     print 'Error in opening file '+ filename
     sys.exit(-1)
 
-#greedy.greedyTSP(cities)
-heldKarp.heldKarp(cities)
+greedy.greedyTSP(cities)
+#heldKarp.heldKarp(cities)

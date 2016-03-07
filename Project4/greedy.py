@@ -5,6 +5,27 @@ def cityDistance(c1, c2):
 	d = int(round(math.sqrt( (c1[1]-c2[1])**2 + (c1[2]-c2[2])**2 )))
 	return d
 
+#for use with the 2-opt part
+def totalDist(path):
+    finalDistance = 0
+    for i in range(1,len(path)):
+        finalDistance += cityDistance(cities[path[i-1]], cities[path[i]])
+    finalDistance += cityDistance(cities[path[0]], cities[path[len(path) - 1]])
+    return finalDistance
+
+def swapPath(path, c1, c2):
+    np = []
+
+    for x in range(0, c1):
+        np.append(path[x])
+    y = c2
+    while c2 > c1 - 1:
+        cp.append(path[c2])
+        c2 = c2 - 1
+    for i in range(y + 1, len(path)):
+        np.append(path[i])
+    return np
+
 
 def greedyTSP(cities):
     visited = list()
@@ -33,7 +54,30 @@ def greedyTSP(cities):
 
     tourLength += lastDistance
 
+    #### 2-OPT #########
+    swap = True
+    while swap:
+        swap = False
+        dist = tourLength
+        for i in range(i+1, len(visited)-1):
+            for j in range(i + 1, len(visited)):
+                optPath = swapPath(visited, i, j)
+                optLength = totalDist(optPath)
+
+                if optLength < tourLength:
+                    del visited[:]
+                    visited[:] = []
+                    visited = optPath
+                    swap = True
+
     print tourLength
     print len(visited)
     for city in visited:
         print city[0]
+
+
+    return visited, tourLength
+
+
+
+
