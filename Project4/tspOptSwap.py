@@ -17,7 +17,7 @@ def main():
 	global STORED_POWERS
 	global STORED_SQR_DISTANCES_SIZE
 
-	if len(sys.argv) < 2:
+	if len(sys.argv) != 2:
 		print ("usage: python2 tspOptSwap.py <inputFile.txt>")
 		sys.exit(1)
 
