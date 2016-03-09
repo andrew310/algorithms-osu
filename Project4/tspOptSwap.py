@@ -1,20 +1,16 @@
 import math
 import random
-import operator
 import sys
 
-STORED_POWERS = list()				# Hold squares of numbers instead of computing it (faster)
 STORED_SQR_DISTANCES = dict() 		# Index computations between cities for quicker lookup
 									# The key is the (city1, city2) tuple, value is 
 									# ((city1_x)^2 - (city2_x)^2) + ((city1_y)^2 - (city2_y)^2)
 									# Note we still have to call sqrt on this result tied to the key 
-STORED_POWERS_SIZE = 100 			# Limit to the size of the list holding computed powers
 STORED_SQR_DISTANCES_SIZE = 3000	# Limits for indexing computation between cities
 STORED_SQR_DISTANCES_MAX = 10000	# Arbitrary max value the the dictionary can hold (want to prevent it getting too big)
 MAX_SAMPLE_SIZE = 100 				# Used to limit items to check for swapping given large data input
 
 def main():
-	global STORED_POWERS
 	global STORED_SQR_DISTANCES_SIZE
 
 	if len(sys.argv) != 2:
@@ -32,11 +28,6 @@ def main():
 	# values being a list containing [city X coord, city Y coord]
 	cities = loadData(inputFilename)
 	numCities = len(cities)
-	computeSqrDistancesSize(numCities)
-
-	# Compute list containing powers for numbers right off the bat
-	# Should help with quicker lookup (better performance)
-	STORED_POWERS = computePowers(STORED_POWERS_SIZE)
 
 	# Run the algorithm
 	print ("Calculating shortest route")
@@ -45,18 +36,6 @@ def main():
 
 	# Dump the results to the output file
 	outputResults(inputFilename + '.tour', bestRoute, bestDistance)
-
-def computeSqrDistancesSize(numCities):
-	global STORED_SQR_DISTANCES_SIZE
-	global STORED_SQR_DISTANCES_MAX
-	# Set the max size of the STORED_SQR_DISTANCES dictionary containing 
-	# computed values for distances between cities. Want to prevent it from getting too big
-	STORED_SQR_DISTANCES_SIZE = (math.pow(numCities, 2) <= STORED_SQR_DISTANCES_MAX) and math.pow(numCities, 2) or STORED_SQR_DISTANCES_MAX
-
-# Returns a list containing squares of list indicies
-# e.g. list[0] = 0; list[1] = 1; list[2] = 4; etc
-def computePowers(x):
-	return [math.pow(n, 2) for n in range(x+1)]
 
 # Rip the data from the input file and store in in a dictionary
 def loadData(inFile):
@@ -88,19 +67,6 @@ def outputResults(filename, route, distance):
 		for i in route:
 			f.write(str(i) + "\n")
 
-# Lookup the square of the passed in number
-# If it doesn't exist, just compute it
-def getSquare(num):
-	global STORED_POWERS
-	global STORED_POWERS_SIZE
-
-	# Lookup the square of the number in the table
-	# If it's not there, just compute it
-	if num <= STORED_POWERS_SIZE:
-		return STORED_POWERS[num]
-	else:
-		return math.pow(num, 2);
-
 # Given two cities, get the value ((city1_x)^2 - (city2_x)^2) + ((city1_y)^2 - (city2_y)^2)
 # Look it up in the dictionary, or just calculate it then store it in
 def calculateSqrDistance(cities, city1, city2):
@@ -113,10 +79,9 @@ def calculateSqrDistance(cities, city1, city2):
 	# If we don't have it in the dictionary, compute it
 	# Hashing into cities gives us a list [city_X_coord, city_Y_coord]
 	xDist = abs(cities[city2][0] - cities[city1][0])
-	yDist = abs(cities[city1][1] - cities[city1][1])
+	yDist = abs(cities[city1][1] - cities[city2][1])
 
-	result = getSquare(xDist) + getSquare(yDist)
-
+	result = math.pow(xDist, 2) + math.pow(yDist, 2)
 	# Store result in table, checking if it gets full
 	if calculateSqrDistance.tableSize >= STORED_SQR_DISTANCES_SIZE:
 		STORED_SQR_DISTANCES.popitem()
@@ -149,7 +114,7 @@ def calculateRouteDistance(cities, route):
 	routeCities.append((route[-1], origin))
 
 	# Calculate total distance sum
-	total = sum([calculateDistance(cities, city1, city2) for (city1, city2) in routeCities])
+	total = int(sum([calculateDistance(cities, city1, city2) for (city1, city2) in routeCities]))
 
 	return total
 
