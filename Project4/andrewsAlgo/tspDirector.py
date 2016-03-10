@@ -1,8 +1,10 @@
 import sys
 import greedy
+import greedyFaster
 import time
 filename = sys.argv[-1]
 cities = []
+cityCount = 0
 print 'Argument List:', str(sys.argv)
 
 
@@ -10,6 +12,7 @@ try:
     with open(filename) as f:
         for line in f:
             cities.append([int(s) for s in line.split() if s.isdigit()])
+            cityCount += 1
 except IOError as e:
     print 'Error in opening file '+ filename
     sys.exit(-1)
@@ -28,9 +31,14 @@ def outputResults(filename, route, distance):
 			f.write(str(i[0]) + "\n")
 
 startTime = time.time()
-tour, tourLength = greedy.greedyTSP(cities)
+if cityCount > 300
+    tour, tourLength = greedyFaster.greedyFasterTSP(cities)
+    outputResults(filename + ".TOUR", tour, tourLength)
+else
+    tour, tourLength = greedy.greedyTSP(cities)
+    outputResults(filename + ".TOUR", tour, tourLength)
 endTime = time.time() - startTime
 print ("Time Taken: ", endTime)
-#heldKarp.heldKarp(cities)
-outputResults(filename + ".TOUR", tour, tourLength)
+
+
 

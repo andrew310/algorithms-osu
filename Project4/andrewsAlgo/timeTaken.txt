@@ -1,5 +1,8 @@
-test-input-1: .019
-test-input-2: .127
-test-input-3: 1.8689
-test-input-4: 14.73
-test-input-5: 120.86
+test-input-1: time: .019
+test-input-2: time: .127
+test-input-3: time: 1.8689
+test-input-4: time: .116
+test-input-5: time: .417
+test-input-6: time: 1.519
+test-input-7: time: 9.24
+

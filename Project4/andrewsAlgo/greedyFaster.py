@@ -14,7 +14,7 @@ def totalDist(path):
     return finalDistance
 
 
-def greedyTSP(cities):
+def greedyFasterTSP(cities):
     visited = list()
     mustVisit = cities
 
@@ -27,15 +27,17 @@ def greedyTSP(cities):
 
     while(len(mustVisit) > 0):
         shortestPath = float('inf') # set to infinity
-        for i in range(0, len(visited)):
-            for j in range(0, len(mustVisit)):
-                distance = cityDistance(visited[i], mustVisit[j])
-                if distance < shortestPath:
-                    shortestPath = distance
-                    nearestCity = mustVisit[j]
+        for i in range(0, len(mustVisit)):
+            distance = cityDistance(current, mustVisit[i])
+            if distance < shortestPath:
+                shortestPath = distance
+                nearestCity = mustVisit[i]
+        #update tour length
         tourLength += shortestPath
+        #add nearest city to the tour
         visited.append(nearestCity)
         mustVisit.remove(nearestCity)
+        current = nearestCity
 
     lastDistance = cityDistance(visited[0], visited[len(visited)-1])
 
