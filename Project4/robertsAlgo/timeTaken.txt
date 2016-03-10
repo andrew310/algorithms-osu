@@ -1,0 +1,4 @@
+test-input-1: time: 3.98
+test-input-2: time: 78.06
+test-input-3: time: 1444.43
+

@@ -1,0 +1,5 @@
+test-input-1: .019
+test-input-2: .127
+test-input-3: 1.8689
+test-input-4: 14.73
+test-input-5: 120.86
