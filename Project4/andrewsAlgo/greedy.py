@@ -54,21 +54,6 @@ def greedyTSP(cities):
 
     tourLength += lastDistance
 
-    #### 2-OPT #########
-    swap = True
-    while swap:
-        swap = False
-        dist = tourLength
-        for i in range(i+1, len(visited)-1):
-            for j in range(i + 1, len(visited)):
-                optPath = swapPath(visited, i, j)
-                optLength = totalDist(optPath)
-
-                if optLength < tourLength:
-                    del visited[:]
-                    visited[:] = []
-                    visited = optPath
-                    swap = True
 
     print tourLength
     print len(visited)

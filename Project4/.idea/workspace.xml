@@ -22,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tspDirector.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tspDirector.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/andrewsAlgo/tspDirector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7055772">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="greedy.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="greedy.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/andrewsAlgo/greedy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.44876784">
+              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -76,8 +76,8 @@
         <option value="$PROJECT_DIR$/tspDirector.py" />
         <option value="$PROJECT_DIR$/greedy.py" />
         <option value="$PROJECT_DIR$/robertsAlgo/tspOptSwap.py" />
-        <option value="$PROJECT_DIR$/andrewsAlgo/greedy.py" />
         <option value="$PROJECT_DIR$/andrewsAlgo/tspDirector.py" />
+        <option value="$PROJECT_DIR$/andrewsAlgo/greedy.py" />
       </list>
     </option>
   </component>
@@ -524,14 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/andrewsAlgo/greedy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/robertsAlgo/tspOptSwap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27586207">
@@ -544,11 +536,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/andrewsAlgo/tspDirector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7055772">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/andrewsAlgo/greedy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44876784">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
