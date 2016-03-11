@@ -33,10 +33,10 @@ def outputResults(filename, route, distance):
 startTime = time.time()
 if cityCount > 500:
     tour, tourLength = greedyFaster.greedyFasterTSP(cities)
-    outputResults(filename + ".TOUR", tour, tourLength)
+    outputResults(filename + ".tour", tour, tourLength)
 else:
     tour, tourLength = slow.slowTSP(cities)
-    outputResults(filename + ".TOUR", tour, tourLength)
+    outputResults(filename + ".tour", tour, tourLength)
 endTime = time.time() - startTime
 print ("Time Taken: ", endTime)
 
