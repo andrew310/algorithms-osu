@@ -5,14 +5,6 @@ def cityDistance(c1, c2):
 	d = int(round(math.sqrt( (c1[1]-c2[1])**2 + (c1[2]-c2[2])**2 )))
 	return d
 
-#for use with the 2-opt part
-def totalDist(path):
-    finalDistance = 0
-    for i in range(1,len(path)):
-        finalDistance += cityDistance(cities[path[i-1]], cities[path[i]])
-    finalDistance += cityDistance(cities[path[0]], cities[path[len(path) - 1]])
-    return finalDistance
-
 
 def greedyFasterTSP(cities):
     visited = list()
@@ -27,6 +19,7 @@ def greedyFasterTSP(cities):
 
     while(len(mustVisit) > 0):
         shortestPath = float('inf') # set to infinity
+        #just looping once, only comparing distances to one city
         for i in range(0, len(mustVisit)):
             distance = cityDistance(current, mustVisit[i])
             if distance < shortestPath:
@@ -42,7 +35,6 @@ def greedyFasterTSP(cities):
     lastDistance = cityDistance(visited[0], visited[len(visited)-1])
 
     tourLength += lastDistance
-
 
     print tourLength
     print len(visited)
