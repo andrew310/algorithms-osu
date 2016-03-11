@@ -31,10 +31,10 @@ def outputResults(filename, route, distance):
 			f.write(str(i[0]) + "\n")
 
 startTime = time.time()
-if cityCount > 300
+if cityCount > 500:
     tour, tourLength = greedyFaster.greedyFasterTSP(cities)
     outputResults(filename + ".TOUR", tour, tourLength)
-else
+else:
     tour, tourLength = greedy.greedyTSP(cities)
     outputResults(filename + ".TOUR", tour, tourLength)
 endTime = time.time() - startTime
