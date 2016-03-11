@@ -1,5 +1,5 @@
 import sys
-import greedy
+import slow
 import greedyFaster
 import time
 filename = sys.argv[-1]
@@ -35,7 +35,7 @@ if cityCount > 500:
     tour, tourLength = greedyFaster.greedyFasterTSP(cities)
     outputResults(filename + ".TOUR", tour, tourLength)
 else:
-    tour, tourLength = greedy.greedyTSP(cities)
+    tour, tourLength = slow.slowTSP(cities)
     outputResults(filename + ".TOUR", tour, tourLength)
 endTime = time.time() - startTime
 print ("Time Taken: ", endTime)

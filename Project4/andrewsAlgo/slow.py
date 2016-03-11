@@ -14,7 +14,7 @@ def totalDist(path):
     return finalDistance
 
 
-def greedyTSP(cities):
+def slowTSP(cities):
     visited = list()
     mustVisit = cities
 
